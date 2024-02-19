@@ -15,9 +15,9 @@ try {
         $statement = $db->prepare($prepareSql);
         $statement->bindParam(':id', $id);
         $statement->execute();
-  
-        header("location: /TEST/TEST.php");
-        exit;
+
+        header('location: /login/index.php');
+        exit();
     }
 } catch (PDOException $e) {
     print $e->getMessage();

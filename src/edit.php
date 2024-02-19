@@ -45,7 +45,7 @@ try {
         <form action="edit_action.php" method="POST">
             <div class="form-group">
                 <label for="nom">Nom:</label>
-                <input type="hidden" name="matricule" value="<?php echo $employe['matricule']; ?>">
+                <input type="hidden" name="id" value="<?php echo $employe['matricule']; ?>">
 
                 <input type="text" class="form-control" id="nom" name="nom" value="<?php echo $employe['nom'] ?>">
             </div>
@@ -82,7 +82,7 @@ try {
                 </select>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
-            <a href="TEST.php" class="btn btn-secondary">Back</a>
+            <a href="index.php" class="btn btn-secondary">Back</a>
         </form>
     </div>
 </body>

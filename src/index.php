@@ -10,7 +10,7 @@
 
 <body>
 
-    
+
 
     <?php
 
@@ -25,13 +25,13 @@
 
         $prepareSql = "SELECT * FROM employe inner join srv on employe.IdService = srv.IdService";
         $statement = $db->prepare($prepareSql);
-        
+
         $statement->execute();
 
         echo '<table border="1" class="table table-striped">';
         echo "<tr><th>Matricule</th><th>Nom</th><th>Prenom</th><th>Date De Naissance</th><th>Fonction</th><th>Salaire</th><th>Service</th><th>Action</th></tr>";
 
-       while ($line = $statement -> fetch(PDO::FETCH_ASSOC)) {
+        while ($line = $statement->fetch(PDO::FETCH_ASSOC)) {
             echo "<tr>
          <td>" . $line['matricule'] . "</td>
          <td>" . $line['nom'] . "</td>
@@ -41,15 +41,14 @@
          <td>" . $line['salaire'] . "</td>
          <td>" . $line['nomService'] . "</td>
          <td>
-           <a href='/TEST/edit.php?id=" . $line['matricule'] . "'>Edit</a>
-           <a href='/TEST/delete.php?id=" . $line['matricule']  ."'>Delete</a>
+           <a href='/login/edit.php?id=" . $line['matricule'] . "'>Edit</a>
+           <a href='/login/delete.php?id=" . $line['matricule']  . "'>Delete</a>
          </td>
        </tr>";
-
         }
 
         echo "</table>";
-        echo '<a href="/TEST/insert.php" class="btn btn-success">Add New Employee</a>';
+        echo '<a href="/login/insert.php" class="btn btn-success">Add New Employee</a>';
     }
     // If there's any error or problem in connecting to database server print error message
     catch (PDOException $error) {
